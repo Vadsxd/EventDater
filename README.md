@@ -1,2 +1,2 @@
-# IventDater
+# EventDater
 API для управления мероприятиями в компании
