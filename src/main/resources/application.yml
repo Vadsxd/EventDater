@@ -1,0 +1,29 @@
+logging:
+  level:
+    web: DEBUG
+
+server:
+  forward-headers-strategy: native
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  config:
+    import: optional:file:.env[.properties]
+    jpa:
+      database: postgresql
+      hibernate:
+        ddl-auto: validate
+      properties:
+        hibernate:
+          show_sql: true
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+
+  application:
+    name: EventDater
