@@ -37,6 +37,10 @@ public class User implements UserDetails {
     @Column(name = "role")
     private Role role;
 
+    @ManyToOne
+    @JoinColumn(name = "event_id")
+    private Event event;
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return List.of(new SimpleGrantedAuthority(role.name()));
