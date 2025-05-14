@@ -35,6 +35,9 @@ public class Event {
     @Column(name = "price")
     private Long price;
 
+    @Column(name = "name")
+    private String name;
+
     @OneToOne(mappedBy = "event", cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private Contract contract;
