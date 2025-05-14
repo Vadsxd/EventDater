@@ -1,6 +1,17 @@
 version: "3"
 
 services:
+  backend:
+    container_name: event_dater
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgresql
+    env_file:
+      - .env
+
   postgresql:
     container_name: event_dater_db
     image: "postgres:15.0"
