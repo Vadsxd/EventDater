@@ -27,7 +27,8 @@ public class ContractController {
     }
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "403", description = "Ошибка авторизации")
+            @ApiResponse(responseCode = "403", description = "Ошибка авторизации"),
+            @ApiResponse(responseCode = "403", description = "Договор отсутствует в базе")
     })
     @Operation(summary = "Подписать договор")
     @PostMapping("/sign")

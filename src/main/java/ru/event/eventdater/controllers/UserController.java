@@ -27,7 +27,8 @@ public class UserController {
     }
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "403", description = "Ошибка авторизации")
+            @ApiResponse(responseCode = "403", description = "Ошибка авторизации"),
+            @ApiResponse(responseCode = "404", description = "Данного мероприятия не существует")
     })
     @Operation(summary = "Записаться на мероприятие")
     @PutMapping("/subscribeEvent")

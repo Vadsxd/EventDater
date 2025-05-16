@@ -30,7 +30,8 @@ public class AdminController {
     }
 
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "403", description = "Ошибка авторизации")
+            @ApiResponse(responseCode = "403", description = "Ошибка авторизации"),
+            @ApiResponse(responseCode = "404", description = "Данный пользователь не зарегистрирован")
     })
     @Operation(summary = "Выдать роль PRINCIPAL пользователю")
     @PutMapping("/givePrincipal/{id}")
